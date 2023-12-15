@@ -30,9 +30,19 @@ public class ObjectSpawner : MonoBehaviour
             var item = Instantiate(_pickableItemPrefab);
 
             // Генерируем новую позицию, избегая коллизий при спавне
-            Vector3 randomSpawnPoint = GenerateSafeSpawnPoint();
+           // Vector3 randomSpawnPoint = GenerateSafeSpawnPoint();
 
-            item.transform.position = randomSpawnPoint;
+           // item.transform.position = randomSpawnPoint;
+           
+           Vector3 randomSpawnPoint = _positionGenerator.GetRandomPointOnGameBoard();
+
+           // Пока враг касается кого-либо - генерируем новую позицию
+          // while (randomSpawnPoint.HasCollisions(_enemyRadius))
+           //{
+             //  randomSpawnPoint = _positionGenerator.GetRandomPointOnGameBoard();
+         //  }
+
+           item.transform.position = randomSpawnPoint;
 
             // Инициализируем объект случайным цветом
             item.Initialize(_colorsProvider.GetRandomColor());
