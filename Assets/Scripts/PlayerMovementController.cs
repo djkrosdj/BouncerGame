@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 
+/// Класс отвечающий за перемещения игрока
 /// </summary>
 public class PlayerMovementController : MonoBehaviour
 {
