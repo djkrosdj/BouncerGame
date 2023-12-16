@@ -7,10 +7,12 @@ using Random = UnityEngine.Random;
 /// </summary>
 public class PositionGenerator : MonoBehaviour
 {
+    [SerializeField] private Renderer _planeRenderer;
+    
     private Vector3 _minBounds; // Минимальные границы объекта GameBoard
     private Vector3 _maxBounds; // Максимальные границы объекта GameBoard
 
-    private void Awake()
+    public void Initialize()
     {
         CalculateBounds();
     }
@@ -20,11 +22,11 @@ public class PositionGenerator : MonoBehaviour
     /// </summary>
     private void CalculateBounds()
     {
-        Renderer planeRenderer = GetComponent<Renderer>();
-        if (planeRenderer != null)
+       // Renderer planeRenderer = GetComponent<Renderer>();
+        if (_planeRenderer != null)
         {
-            _minBounds = planeRenderer.bounds.min;
-            _maxBounds = planeRenderer.bounds.max;
+            _minBounds = _planeRenderer.bounds.min;
+            _maxBounds = _planeRenderer.bounds.max;
         }
     }
 

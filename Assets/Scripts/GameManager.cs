@@ -13,9 +13,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private ObjectSpawner _objectSpawner;
 
+    [SerializeField] private PositionGenerator _positionGenerator;
+
     private void Awake()
     {
-        _objectSpawner.SpawnObjects(_colorsProvider);
-        _objectSpawner.SpawnObject(_colorsProvider);
+        _positionGenerator.Initialize();                    // Инициализируем данные генератора случайных точек
+        _objectSpawner.SpawnObjects(_colorsProvider);       // Ставним объекты - подарки
+        _objectSpawner.SpawnObject(_colorsProvider);        // Спавним объект - конфета которая перекрашивает Player
     }
 }

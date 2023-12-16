@@ -15,7 +15,9 @@ public class Colorizer : MonoBehaviour
 
     private void Awake()
     {
-        _positionGenerator = GetComponent<PositionGenerator>();
+        // Ищем объект игрового поля который содержит генератор позиций
+        var gameBoard = GameObject.Find(GlobalConstants.GAME_BOARD_TAG);
+        _positionGenerator = gameBoard.GetComponent<PositionGenerator>();
     }
 
     private void Start()

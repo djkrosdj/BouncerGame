@@ -23,43 +23,34 @@ public class ObjectSpawner : MonoBehaviour
 
     public void SpawnObjects(ColorsProvider colorsProvider)
     {
-        _colorsProvider = colorsProvider;
+        _colorsProvider = colorsProvider;                        // Генерируем цвет объекта
 
         for (int i = 0; i < _numberOfObjects; i++)
         {
-            var item = Instantiate(_pickableItemPrefab);
+            var item = Instantiate(_pickableItemPrefab);         // Инстанциируем префаб объекта
+            
+            Vector3 randomSpawnPoint = GenerateSafeSpawnPoint(); // Генерируем новую позицию, избегая коллизий при спавне
 
-            // Генерируем новую позицию, избегая коллизий при спавне
-           // Vector3 randomSpawnPoint = GenerateSafeSpawnPoint();
-
-           // item.transform.position = randomSpawnPoint;
-           
-           Vector3 randomSpawnPoint = _positionGenerator.GetRandomPointOnGameBoard();
-
-           // Пока враг касается кого-либо - генерируем новую позицию
-          // while (randomSpawnPoint.HasCollisions(_enemyRadius))
-           //{
-             //  randomSpawnPoint = _positionGenerator.GetRandomPointOnGameBoard();
-         //  }
-
-           item.transform.position = randomSpawnPoint;
-
-            // Инициализируем объект случайным цветом
-            item.Initialize(_colorsProvider.GetRandomColor());
+            item.transform.position = randomSpawnPoint;
+            
+            item.Initialize(_colorsProvider.GetRandomColor());   // Инициализируем объект случайным цветом
         }
     }
 
     public void SpawnObject(ColorsProvider colorsProvider)
     {
-        _colorsProvider = colorsProvider;
+        _colorsProvider = colorsProvider;                      // Генерируем цвет объекта
 
-        var item = Instantiate(_colorizerPrefab);
-        Vector3 randomSpawnPoint = _positionGenerator.GetRandomPointOnGameBoard();
+        var item = Instantiate(_colorizerPrefab);       // Инстанциируем префаб объекта
+        
+        Vector3 randomSpawnPoint = GenerateSafeSpawnPoint();   // Генерируем новую позицию, избегая коллизий при спавне
+       
         item.transform.position = randomSpawnPoint;
 
         item.Initialize(_colorsProvider);
+
     }
-    
+
     private Vector3 GenerateSafeSpawnPoint()
     {
         // Генерируем новую позицию

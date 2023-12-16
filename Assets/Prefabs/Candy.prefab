@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5568511417718030359}
   - component: {fileID: -8628949450997129312}
   - component: {fileID: 5463532113695887199}
-  - component: {fileID: -3533045345158373082}
   m_Layer: 0
   m_Name: Candy
   m_TagString: Untagged
@@ -61,18 +60,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.26, z: 0.05}
   m_Center: {x: 0.05, y: -0.01, z: 0}
---- !u!114 &-3533045345158373082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5568511417718030358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 029fb7f649ae49f7843a0b363b8218e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3861348222606789203
 PrefabInstance:
   m_ObjectHideFlags: 0

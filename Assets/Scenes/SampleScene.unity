@@ -4511,6 +4511,7 @@ MonoBehaviour:
   _pickableItemPrefab: {fileID: -4754479644236846168, guid: 7b100496130a3994a8dae924aa7dcde9, type: 3}
   _colorizerPrefab: {fileID: -8628949450997129312, guid: 60937d8f305fdfc49b12dd1dfcb6c6d7, type: 3}
   _numberOfObjects: 6
+  _enemyRadius: 1
 --- !u!114 &1680474314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4529,6 +4530,7 @@ MonoBehaviour:
     - {r: 0, g: 1, b: 0, a: 0.98039216}
     - {r: 0, g: 0, b: 1, a: 0.98039216}
   _objectSpawner: {fileID: 1680474313}
+  _positionGenerator: {fileID: 1680474315}
 --- !u!114 &1680474315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4541,6 +4543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 029fb7f649ae49f7843a0b363b8218e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _planeRenderer: {fileID: 1680474310}
 --- !u!114 &1680474316
 MonoBehaviour:
   m_ObjectHideFlags: 0
