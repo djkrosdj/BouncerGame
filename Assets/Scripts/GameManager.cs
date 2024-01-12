@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         _positionGenerator.Initialize();                    // Инициализируем данные генератора случайных точек
-        _objectSpawner.SpawnObjects(_colorsProvider);       // Ставним объекты - подарки
+        _objectSpawner.SpawnObjects(_colorsProvider);       // Спавним объекты - подарки
         _objectSpawner.SpawnObject(_colorsProvider);        // Спавним объект - конфета которая перекрашивает Player
     }
 }

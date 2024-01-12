@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -29,11 +30,15 @@ public class ObjectSpawner : MonoBehaviour
         {
             var item = Instantiate(_pickableItemPrefab);         // Инстанциируем префаб объекта
             
+            var color = _colorsProvider.GetRandomColor();        // Генерируем случайный цвет
+            
             Vector3 randomSpawnPoint = GenerateSafeSpawnPoint(); // Генерируем новую позицию, избегая коллизий при спавне
 
             item.transform.position = randomSpawnPoint;
             
-            item.Initialize(_colorsProvider.GetRandomColor());   // Инициализируем объект случайным цветом
+            item.Initialize(color);   // Инициализируем объект случайным цветом
+            
+            CounterScores.IncreaseColorCounter(color);   // Добавляем данные в счетчик кол-во подарков.
         }
     }
 
@@ -64,4 +69,15 @@ public class ObjectSpawner : MonoBehaviour
 
         return randomSpawnPoint;
     }
+
+   // private void СolorСheck(GameObject gameObject)
+   // {
+   //     var objectColor = gameObject.GetComponent<Color>();
+   //     CounterScores counter = null;
+   //     
+   //     if (objectColor == Color.red)
+   //     {
+   //         counter.IncreaseCounter(objectColor);
+   //     }
+   // }
 }

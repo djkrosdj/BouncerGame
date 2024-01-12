@@ -48,5 +48,8 @@ public class PlayerMovementController : MonoBehaviour
 
         // Толкаем игрока в заданном направлении
         _rigidbody.AddForce(new Vector3(direction.x, 0, direction.z) * _forceValue);
+        
+        // Считаем ходы игрока
+        CounterScores.IncreaseStepCounter();
     }
 }

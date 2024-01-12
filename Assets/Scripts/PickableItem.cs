@@ -30,6 +30,8 @@ public class PickableItem : MonoBehaviour
             {
                 // Разрушаем объект
                 Destroy(gameObject);
+                
+                CounterScores.DecreaseColorCounter(_color);
             }
         }
     }
